@@ -22,6 +22,7 @@ public class JournalNavigation : MonoBehaviour
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos++;
             pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
         }
     }
 
@@ -32,6 +33,7 @@ public class JournalNavigation : MonoBehaviour
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos--;
             pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
         }
     }
 }
