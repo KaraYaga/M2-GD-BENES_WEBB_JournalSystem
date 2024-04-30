@@ -21,11 +21,12 @@ public class JournalNavigation : MonoBehaviour
 
     public void RightPage(InputAction.CallbackContext context)
     {
-        if (context.performed && pagesPos < pages.Count)
+        if (context.performed && pagesPos < pages.Count - 1)
         {
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos++;
             pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
         }
     }
 
@@ -36,6 +37,7 @@ public class JournalNavigation : MonoBehaviour
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos--;
             pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
         }
     }
 }
