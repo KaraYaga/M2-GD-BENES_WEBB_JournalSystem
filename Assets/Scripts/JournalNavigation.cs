@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class JournalNavigation : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> pages = new List<GameObject>();
+    private int pagesPos = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,23 @@ public class JournalNavigation : MonoBehaviour
         
     }
 
-    public void Home(InputAction.CallbackContext context)
+    public void RightPage(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && pagesPos < pages.Count)
         {
-            Debug.Log("go home");
+            pages[pagesPos].gameObject.SetActive(false);
+            pagesPos++;
+            pages[pagesPos].gameObject.SetActive(true);
         }
+    }
 
+    public void LastPage(InputAction.CallbackContext context)
+    {
+        if (context.performed && pagesPos > 0)
+        {
+            pages[pagesPos].gameObject.SetActive(false);
+            pagesPos--;
+            pages[pagesPos].gameObject.SetActive(true);
+        }
     }
 }

@@ -1277,8 +1277,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164496651}
-  - component: {fileID: 1164496650}
   - component: {fileID: 1164496649}
+  - component: {fileID: 1164496650}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1298,6 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c89f039ca5c540a3d4123549f4037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pages: []
 --- !u!114 &1164496650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,11 +1325,35 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1164496649}
+        m_TargetAssemblyTypeName: JournalNavigation, Assembly-CSharp
+        m_MethodName: LastPage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3694f0a8-8f32-418e-8a9a-f4ff2c6c5468
     m_ActionName: JournalNavigation/Left Page[/Mouse/forwardButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1164496649}
+        m_TargetAssemblyTypeName: JournalNavigation, Assembly-CSharp
+        m_MethodName: RightPage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f88ffc84-7504-4a44-85ad-e8e4804721df
     m_ActionName: JournalNavigation/Right Page[/Mouse/backButton]
   - m_PersistentCalls:
@@ -1348,11 +1373,35 @@ MonoBehaviour:
     m_ActionId: 6802de36-5f4d-458a-8d5c-22f3b5c2f94e
     m_ActionName: JournalNavigation/Home[/Keyboard/q]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 128143994}
+        m_TargetAssemblyTypeName: CanvasManagerScript, Assembly-CSharp
+        m_MethodName: optionsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 449f6c13-379a-4b67-990a-27b2bf060d6a
     m_ActionName: JournalNavigation/Options[/Keyboard/s]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 128143994}
+        m_TargetAssemblyTypeName: CanvasManagerScript, Assembly-CSharp
+        m_MethodName: inputButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 07ad109d-84a4-484d-bba3-3882988efaae
     m_ActionName: JournalNavigation/Inputs[/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
