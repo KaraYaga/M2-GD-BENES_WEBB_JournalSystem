@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 180669178}
   - component: {fileID: 180669177}
   - component: {fileID: 180669176}
+  - component: {fileID: 180669179}
   m_Layer: 5
   m_Name: PageBackwardButton
   m_TagString: Untagged
@@ -885,7 +886,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180669177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180669179}
+        m_TargetAssemblyTypeName: ReBinding, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &180669177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +937,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180669174}
   m_CullTransparentMesh: 1
+--- !u!114 &180669179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180669174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08020cf5f061ab44bb95c2e9b2a02be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 7048578425145926713, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
 --- !u!1 &195060929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1752,7 @@ GameObject:
   - component: {fileID: 364966678}
   - component: {fileID: 364966677}
   - component: {fileID: 364966676}
+  - component: {fileID: 364966679}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -1796,7 +1823,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 364966677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 364966679}
+        m_TargetAssemblyTypeName: ReBinding, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &364966677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,6 +1874,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364966674}
   m_CullTransparentMesh: 1
+--- !u!114 &364966679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364966674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08020cf5f061ab44bb95c2e9b2a02be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 53654024969487602, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
 --- !u!1 &412529941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,6 +3222,7 @@ GameObject:
   - component: {fileID: 849424662}
   - component: {fileID: 849424661}
   - component: {fileID: 849424660}
+  - component: {fileID: 849424663}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -3240,7 +3293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 849424661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 849424663}
+        m_TargetAssemblyTypeName: ReBinding, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &849424661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3279,6 +3344,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849424658}
   m_CullTransparentMesh: 1
+--- !u!114 &849424663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849424658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08020cf5f061ab44bb95c2e9b2a02be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 7653849098614581800, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
 --- !u!1 &873655413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,6 +4397,7 @@ GameObject:
   - component: {fileID: 1167725162}
   - component: {fileID: 1167725161}
   - component: {fileID: 1167725160}
+  - component: {fileID: 1167725163}
   m_Layer: 5
   m_Name: PageForwardButton
   m_TagString: Untagged
@@ -4389,7 +4468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1167725161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1167725163}
+        m_TargetAssemblyTypeName: ReBinding, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1167725161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4428,6 +4519,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167725158}
   m_CullTransparentMesh: 1
+--- !u!114 &1167725163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167725158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08020cf5f061ab44bb95c2e9b2a02be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: -1047625307122069595, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
 --- !u!1 &1179571108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,6 +4848,7 @@ GameObject:
   - component: {fileID: 1326092908}
   - component: {fileID: 1326092907}
   - component: {fileID: 1326092906}
+  - component: {fileID: 1326092909}
   m_Layer: 5
   m_Name: InputButton
   m_TagString: Untagged
@@ -4814,7 +4919,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1326092907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326092909}
+        m_TargetAssemblyTypeName: ReBinding, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1326092907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4853,6 +4970,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326092904}
   m_CullTransparentMesh: 1
+--- !u!114 &1326092909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326092904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08020cf5f061ab44bb95c2e9b2a02be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: -4719954354972786536, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
 --- !u!1 &1344036574
 GameObject:
   m_ObjectHideFlags: 0
