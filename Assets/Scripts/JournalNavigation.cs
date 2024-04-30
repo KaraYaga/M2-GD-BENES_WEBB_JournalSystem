@@ -7,21 +7,16 @@ public class JournalNavigation : MonoBehaviour
 {
     [SerializeField] private List<GameObject> pages = new List<GameObject>();
     private int pagesPos = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    CanvasManagerScript canvaManager;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        canvaManager = CanvasManagerScript.instance;
     }
 
     public void RightPage(InputAction.CallbackContext context)
     {
-        if (context.performed && pagesPos < pages.Count - 1)
+        if (context.performed && pagesPos < pages.Count - 1 && canvaManager.GetInsInJournal())
         {
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos++;
@@ -32,7 +27,7 @@ public class JournalNavigation : MonoBehaviour
 
     public void LastPage(InputAction.CallbackContext context)
     {
-        if (context.performed && pagesPos > 0)
+        if (context.performed && pagesPos > 0 && canvaManager.GetInsInJournal())
         {
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos--;
