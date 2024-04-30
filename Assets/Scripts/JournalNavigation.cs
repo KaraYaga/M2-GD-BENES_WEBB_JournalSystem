@@ -5,24 +5,34 @@ using UnityEngine.InputSystem;
 
 public class JournalNavigation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<GameObject> pages = new List<GameObject>();
+    private int pagesPos = 0;
+    CanvasManagerScript canvaManager;
+
+    private void Start()
     {
-        
+        canvaManager = CanvasManagerScript.instance;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RightPage(InputAction.CallbackContext context)
     {
-        
-    }
-
-    public void Home(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        if (context.performed && pagesPos < pages.Count - 1 && canvaManager.GetInsInJournal())
         {
-            Debug.Log("go home");
+            pages[pagesPos].gameObject.SetActive(false);
+            pagesPos++;
+            pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
         }
+    }
 
+    public void LastPage(InputAction.CallbackContext context)
+    {
+        if (context.performed && pagesPos > 0 && canvaManager.GetInsInJournal())
+        {
+            pages[pagesPos].gameObject.SetActive(false);
+            pagesPos--;
+            pages[pagesPos].gameObject.SetActive(true);
+            Debug.Log(pagesPos);
+        }
     }
 }
