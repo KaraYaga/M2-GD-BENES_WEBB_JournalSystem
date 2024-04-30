@@ -18,7 +18,7 @@ public class CanvasManagerScript : MonoBehaviour
     // HOME MENU OPEN AND CLOSE
     public void homeButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
     }
 
     // OPTIONS MENU OPEN AND CLOSE
