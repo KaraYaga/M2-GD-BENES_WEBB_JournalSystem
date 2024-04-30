@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class JournalNavigation : MonoBehaviour
 {
-    //[SerializeField] private InputActionReference action;
     [SerializeField] private List<GameObject> pages = new List<GameObject>();
     private int pagesPos = 0;
     CanvasManagerScript canvaManager;
