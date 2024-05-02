@@ -24,6 +24,7 @@ public class ReBinding : MonoBehaviour
         rebindOperation = inputAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Keyboard>/escape")
             .WithControlsExcluding("<Mouse>/leftButton")
+            .WithControlsExcluding("<Mouse>/press")
             .WithControlsExcluding("<Gamepad>/leftStick/down")
             .WithControlsExcluding("<Gamepad>/leftStick/up")
             .WithControlsExcluding("<Gamepad>/leftStick/right")

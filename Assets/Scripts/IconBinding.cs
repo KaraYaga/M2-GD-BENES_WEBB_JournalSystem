@@ -17,8 +17,6 @@ public class IconBinding : MonoBehaviour
         public Sprite buttonNorth;
         public Sprite buttonEast;
         public Sprite buttonWest;
-        public Sprite startButton;
-        public Sprite selectButton;
         public Sprite leftTrigger;
         public Sprite rightTrigger;
         public Sprite leftShoulder;
@@ -45,12 +43,10 @@ public class IconBinding : MonoBehaviour
                 case "Button North": return buttonNorth;
                 case "Button East": return buttonEast;
                 case "Button West": return buttonWest;
-                case "start": return startButton;
-                case "select": return selectButton;
-                case "leftTrigger": return leftTrigger;
-                case "rightTrigger": return rightTrigger;
-                case "leftShoulder": return leftShoulder;
-                case "rightShoulder": return rightShoulder;
+                case "Left Trigger": return leftTrigger;
+                case "Right Trigger": return rightTrigger;
+                case "Left Shoulder": return leftShoulder;
+                case "Right Shoulder": return rightShoulder;
                 case "dpad": return dpad;
                 case "dpad/up": return dpadUp;
                 case "dpad/down": return dpadDown;
