@@ -1,6 +1,8 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ReBinding : MonoBehaviour
 {
@@ -48,10 +50,28 @@ public class ReBinding : MonoBehaviour
             int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
 
             if (InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath) == "<Mouse>/leftButton")
+                actionRef.action.bindings[bindingIndex].effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice) == "Left Button")
             {
                 bindingText.text = "";
+                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("leftButton");
+
+                spriteIcon.SetActive(true);
+
             }
+
+            if (InputControlPath.ToHumanReadableString(
+                actionRef.action.bindings[bindingIndex].effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice) == "Right Button")
+            {
+                bindingText.text = "";
+                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("rightButton");
+                spriteIcon.SetActive(true);
+            }
+            //else
+            //{
+            //    spriteIcon.SetActive(false);
+            //}
 
 
             bindingText.text = InputControlPath.ToHumanReadableString(
@@ -62,6 +82,7 @@ public class ReBinding : MonoBehaviour
         {
             Debug.Log("Gamepad");
             bindingText.text = "";
+            spriteIcon.SetActive(false);
         }
 
     }

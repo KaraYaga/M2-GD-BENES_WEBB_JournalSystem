@@ -66,7 +66,6 @@ public class CanvasManagerScript : MonoBehaviour
         isInJournal = true;
         Input.SetActive(false);
 
-
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(mainHomeButton, new BaseEventData(eventSystem));
     }
