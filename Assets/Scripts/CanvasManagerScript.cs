@@ -9,7 +9,9 @@ public class CanvasManagerScript : MonoBehaviour
     public static CanvasManagerScript instance;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Input;
-    [SerializeField] private GameObject mainButton;
+
+    [SerializeField] private GameObject mainHomeButton;
+    [SerializeField] private GameObject mainInputButton;
     private bool isInJournal;
 
 
@@ -46,7 +48,7 @@ public class CanvasManagerScript : MonoBehaviour
         Options.SetActive(false);
 
         var eventSystem = EventSystem.current;
-        eventSystem.SetSelectedGameObject(mainButton, new BaseEventData(eventSystem));
+        eventSystem.SetSelectedGameObject(mainHomeButton, new BaseEventData(eventSystem));
     }
 
     // INPUT MENU OPEN AND CLOSE
@@ -55,14 +57,18 @@ public class CanvasManagerScript : MonoBehaviour
         isInJournal = false;
         Input.SetActive(true);
         Options.SetActive(false);
+
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(mainInputButton, new BaseEventData(eventSystem));
     }
     public void closeInput()
     {
         isInJournal = true;
         Input.SetActive(false);
 
+
         var eventSystem = EventSystem.current;
-        eventSystem.SetSelectedGameObject(mainButton, new BaseEventData(eventSystem));
+        eventSystem.SetSelectedGameObject(mainHomeButton, new BaseEventData(eventSystem));
     }
 
     public bool GetInsInJournal()

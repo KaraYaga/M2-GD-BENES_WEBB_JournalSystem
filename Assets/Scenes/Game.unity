@@ -633,6 +633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Options: {fileID: 514341784}
   Input: {fileID: 1179571108}
+  mainHomeButton: {fileID: 679882490}
+  mainInputButton: {fileID: 364966674}
 --- !u!4 &128143995
 Transform:
   m_ObjectHideFlags: 0
