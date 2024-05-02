@@ -50,6 +50,7 @@ public class ReBinding : MonoBehaviour
 
     public void UpdateBindingUI()
     {
+        //*********************************************************NEED TO FIX : ui don't update gamepad if changed before (only update the one before that) 
         PlayerInput playerInput = JournalNavigation.instance.GetPlayerInput();
 
         int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
