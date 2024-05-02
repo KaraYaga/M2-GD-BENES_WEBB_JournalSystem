@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ReBinding : MonoBehaviour
 {
-    [SerializeField] private InputActionReference action;
+    [SerializeField] private InputActionReference actionRef;
+    [SerializeField] private TMP_Text bindingText;
     private InputAction inputAction;
     private InputActionRebindingExtensions.RebindingOperation rebindOperation;
 
     void Start()
     {
-        inputAction = action;
+        inputAction = actionRef;
+
+        UpdateBindingUI();
     }
 
     public void StartRebind() 
@@ -28,6 +32,17 @@ public class ReBinding : MonoBehaviour
 
     public void RebindComplete()
     {
+        UpdateBindingUI();
+
         rebindOperation.Dispose();
+    }
+
+    void UpdateBindingUI()
+    {
+        int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+
+        bindingText.text = InputControlPath.ToHumanReadableString(
+            actionRef.action.bindings[bindingIndex].effectivePath,
+            InputControlPath.HumanReadableStringOptions.OmitDevice);
     }
 }
