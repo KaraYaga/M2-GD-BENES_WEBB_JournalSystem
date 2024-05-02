@@ -49,12 +49,6 @@ public class ReBinding : MonoBehaviour
 
         if (playerInput.currentControlScheme == "Keyboard")
         {
-            
-
-            Debug.Log(InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice));
-
             if (InputControlPath.ToHumanReadableString(
                     actionRef.action.bindings[bindingIndex].effectivePath,
                     InputControlPath.HumanReadableStringOptions.OmitDevice) == "Left Button" ||
@@ -86,15 +80,17 @@ public class ReBinding : MonoBehaviour
         }
         else if(playerInput.currentControlScheme == "Gamepad")
         {
-            Debug.Log("Gamepad");
             bindingText.text = "";
 
             string controlPath = InputControlPath.ToHumanReadableString(
                     actionRef.action.bindings[bindingIndex].effectivePath,
                     InputControlPath.HumanReadableStringOptions.OmitDevice);
 
-            spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
             Debug.Log(controlPath);
+
+            spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
+
+
             spriteIcon.SetActive(true);
         }
 
