@@ -19,6 +19,7 @@ public class ReBinding : MonoBehaviour
         inputAction.Disable();
         rebindOperation = inputAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Keyboard>/escape")
+            .OnMatchWaitForAnother(0.1f)
             .OnComplete(operation => RebindComplete());
 
         rebindOperation.Start();
