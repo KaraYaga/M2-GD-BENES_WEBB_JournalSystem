@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionRef: {fileID: 7048578425145926713, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
   bindingText: {fileID: 2015648068}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 195060929}
 --- !u!1 &195060929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionRef: {fileID: 53654024969487602, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
   bindingText: {fileID: 1536218338}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 1741836630}
 --- !u!1 &383945602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,7 +1945,6 @@ GameObject:
   m_Component:
   - component: {fileID: 383945605}
   - component: {fileID: 383945604}
-  - component: {fileID: 383945603}
   m_Layer: 0
   m_Name: Icons
   m_TagString: Untagged
@@ -1953,58 +1952,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &383945603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383945602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84cd9b84e0604a9abafb77712f1df90a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xbox:
-    buttonSouth: {fileID: 0}
-    buttonNorth: {fileID: 0}
-    buttonEast: {fileID: 0}
-    buttonWest: {fileID: 0}
-    startButton: {fileID: 0}
-    selectButton: {fileID: 0}
-    leftTrigger: {fileID: 0}
-    rightTrigger: {fileID: 0}
-    leftShoulder: {fileID: 0}
-    rightShoulder: {fileID: 0}
-    dpad: {fileID: 0}
-    dpadUp: {fileID: 0}
-    dpadDown: {fileID: 0}
-    dpadLeft: {fileID: 0}
-    dpadRight: {fileID: 0}
-    leftStick: {fileID: 0}
-    rightStick: {fileID: 0}
-    leftStickPress: {fileID: 0}
-    rightStickPress: {fileID: 0}
-  ps4:
-    buttonSouth: {fileID: 0}
-    buttonNorth: {fileID: 0}
-    buttonEast: {fileID: 0}
-    buttonWest: {fileID: 0}
-    startButton: {fileID: 0}
-    selectButton: {fileID: 0}
-    leftTrigger: {fileID: 0}
-    rightTrigger: {fileID: 0}
-    leftShoulder: {fileID: 0}
-    rightShoulder: {fileID: 0}
-    dpad: {fileID: 0}
-    dpadUp: {fileID: 0}
-    dpadDown: {fileID: 0}
-    dpadLeft: {fileID: 0}
-    dpadRight: {fileID: 0}
-    leftStick: {fileID: 0}
-    rightStick: {fileID: 0}
-    leftStickPress: {fileID: 0}
-    rightStickPress: {fileID: 0}
 --- !u!114 &383945604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,7 +1985,7 @@ MonoBehaviour:
     leftStickPress: {fileID: 0}
     rightStickPress: {fileID: 0}
     mouseRightClick: {fileID: 21300000, guid: b19ea775868432d469472166c8f22748, type: 3}
-    mouseLeftClick: {fileID: 21300000, guid: b19ea775868432d469472166c8f22748, type: 3}
+    mouseLeftClick: {fileID: 21300000, guid: 0eea248bbcff48c47981851e67f895ea, type: 3}
 --- !u!4 &383945605
 Transform:
   m_ObjectHideFlags: 0
@@ -4080,7 +4027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionRef: {fileID: 7653849098614581800, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
   bindingText: {fileID: 1397731217}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 112616467}
 --- !u!1 &894098961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4976,7 +4923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionRef: {fileID: -1047625307122069595, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
   bindingText: {fileID: 664172807}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 247830839}
 --- !u!1 &1179571108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5520,7 +5467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionRef: {fileID: -4719954354972786536, guid: 1fea7bf822240364ab060f5ff044f4a4, type: 3}
   bindingText: {fileID: 89635802}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 1545401954}
 --- !u!1 &1344036574
 GameObject:
   m_ObjectHideFlags: 0

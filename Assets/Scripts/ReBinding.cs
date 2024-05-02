@@ -49,9 +49,16 @@ public class ReBinding : MonoBehaviour
         {
             int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
 
+            Debug.Log(InputControlPath.ToHumanReadableString(
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice));
+
             if (InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath,
-                InputControlPath.HumanReadableStringOptions.OmitDevice) == "Left Button")
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Left Button" ||
+                    InputControlPath.ToHumanReadableString(
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Press")
             {
                 bindingText.text = "";
                 spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("leftButton");
@@ -59,24 +66,21 @@ public class ReBinding : MonoBehaviour
                 spriteIcon.SetActive(true);
 
             }
-
-            if (InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath,
-                InputControlPath.HumanReadableStringOptions.OmitDevice) == "Right Button")
+            else if (InputControlPath.ToHumanReadableString(
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Right Button")
             {
                 bindingText.text = "";
                 spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("rightButton");
                 spriteIcon.SetActive(true);
             }
-            //else
-            //{
-            //    spriteIcon.SetActive(false);
-            //}
-
-
-            bindingText.text = InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath,
-                InputControlPath.HumanReadableStringOptions.OmitDevice);
+            else
+            {
+                spriteIcon.SetActive(false);
+                bindingText.text = InputControlPath.ToHumanReadableString(
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+            }
         }
         else if(playerInput.currentControlScheme == "Gamepad")
         {
