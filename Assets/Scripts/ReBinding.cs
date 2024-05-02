@@ -54,12 +54,12 @@ public class ReBinding : MonoBehaviour
 
         int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
 
+        string controlPath = InputControlPath.ToHumanReadableString(
+          actionRef.action.bindings[bindingIndex].effectivePath,
+          InputControlPath.HumanReadableStringOptions.OmitDevice);
+
         if (playerInput.currentControlScheme == "Keyboard")
         {
-            string controlPath = InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath,
-                InputControlPath.HumanReadableStringOptions.OmitDevice);
-
             if (controlPath == "Left Button" || controlPath == "Press")
             {
                 bindingText.text = "";
@@ -82,10 +82,6 @@ public class ReBinding : MonoBehaviour
         }
         else if(playerInput.currentControlScheme == "Gamepad")
         {
-            string controlPath = InputControlPath.ToHumanReadableString(
-                actionRef.action.bindings[bindingIndex].effectivePath,
-                InputControlPath.HumanReadableStringOptions.OmitDevice);
-
             bindingText.text = "";
             spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
             spriteIcon.SetActive(true);
