@@ -1,19 +1,11 @@
 using System;
 using UnityEngine;
-
-
-    /// <summary>
-    /// This is an example for how to override the default display behavior of bindings. The component
-    /// hooks into <see cref="RebindActionUI.updateBindingUIEvent"/> which is triggered when UI display
-    /// of a binding should be refreshed. It then checks whether we have an icon for the current binding
-    /// and if so, replaces the default text display with an icon.
-    /// </summary>
     public class IconBinding : MonoBehaviour
     {
-        public GamepadIcons gamepad;
+        public Icons gamepad;
 
         [Serializable]
-        public struct GamepadIcons
+        public struct Icons
         {
             public Sprite buttonSouth;
             public Sprite buttonNorth;
@@ -34,6 +26,8 @@ using UnityEngine;
             public Sprite rightStick;
             public Sprite leftStickPress;
             public Sprite rightStickPress;
+            public Sprite mouseRightClick;
+            public Sprite mouseLeftClick;
 
             public Sprite GetSprite(string controlPath)
             {

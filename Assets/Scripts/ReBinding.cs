@@ -6,6 +6,7 @@ public class ReBinding : MonoBehaviour
 {
     [SerializeField] private InputActionReference actionRef;
     [SerializeField] private TMP_Text bindingText;
+    [SerializeField] private GameObject spriteIcon;
     private InputAction inputAction;
     private InputActionRebindingExtensions.RebindingOperation rebindOperation;
 
@@ -45,6 +46,13 @@ public class ReBinding : MonoBehaviour
         if (playerInput.currentControlScheme == "Keyboard")
         {
             int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+
+            if (InputControlPath.ToHumanReadableString(
+                actionRef.action.bindings[bindingIndex].effectivePath) == "<Mouse>/leftButton")
+            {
+                bindingText.text = "";
+            }
+
 
             bindingText.text = InputControlPath.ToHumanReadableString(
                 actionRef.action.bindings[bindingIndex].effectivePath,
