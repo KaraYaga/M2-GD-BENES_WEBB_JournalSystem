@@ -28,7 +28,7 @@ public class JournalNavigation : MonoBehaviour
 
     public void RightPage(InputAction.CallbackContext context)
     {
-        if (!ClickableButton.hovered && context.performed && pagesPos < pages.Count - 1 && canvaManager.GetInsInJournal())
+        if (!ClickableButton.hovered && context.performed && pagesPos < pages.Count - 1 && canvaManager.GetIsInJournal())
         {
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos++;
@@ -38,7 +38,7 @@ public class JournalNavigation : MonoBehaviour
 
     public void LastPage(InputAction.CallbackContext context)
     {
-        if (!ClickableButton.hovered && context.performed && pagesPos > 0 && canvaManager.GetInsInJournal())
+        if (!ClickableButton.hovered && context.performed && pagesPos > 0 && canvaManager.GetIsInJournal())
         {
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos--;

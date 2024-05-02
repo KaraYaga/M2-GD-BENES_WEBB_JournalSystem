@@ -21,7 +21,6 @@ public class IconBinding : MonoBehaviour
         public Sprite rightTrigger;
         public Sprite leftShoulder;
         public Sprite rightShoulder;
-        public Sprite dpad;
         public Sprite dpadUp;
         public Sprite dpadDown;
         public Sprite dpadLeft;
@@ -47,17 +46,16 @@ public class IconBinding : MonoBehaviour
                 case "Right Trigger": return rightTrigger;
                 case "Left Shoulder": return leftShoulder;
                 case "Right Shoulder": return rightShoulder;
-                case "dpad": return dpad;
-                case "dpad/up": return dpadUp;
-                case "dpad/down": return dpadDown;
-                case "dpad/left": return dpadLeft;
-                case "dpad/right": return dpadRight;
-                case "leftStick": return leftStick;
-                case "rightStick": return rightStick;
-                case "leftStickPress": return leftStickPress;
-                case "rightStickPress": return rightStickPress;
-                case "leftButton": return mouseLeftClick;
-                case "rightButton": return mouseRightClick;
+                case "D-Pad/Up": return dpadUp;
+                case "D-Pad/Down": return dpadDown;
+                case "D-Pad/Left": return dpadLeft;
+                case "D-Pad/Right": return dpadRight;
+                case "Left Stick": return leftStick;
+                case "Right Stick": return rightStick;
+                case "Left Stick Press": return leftStickPress;
+                case "Right Stick Press": return rightStickPress;
+                case "Left Button": return mouseLeftClick;
+                case "Right Button": return mouseRightClick;
             }
             return null;
         }

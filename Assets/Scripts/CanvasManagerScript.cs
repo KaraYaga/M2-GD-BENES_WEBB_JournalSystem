@@ -12,6 +12,8 @@ public class CanvasManagerScript : MonoBehaviour
 
     [SerializeField] private GameObject mainHomeButton;
     [SerializeField] private GameObject mainInputButton;
+
+    [SerializeField] private GameObject waitingForInputPanel;
     private bool isInJournal;
 
 
@@ -25,6 +27,7 @@ public class CanvasManagerScript : MonoBehaviour
     {
         Options.SetActive(false);
         Input.SetActive(false);
+        waitingForInputPanel.SetActive(false);
         isInJournal = true;
     }
 
@@ -70,8 +73,13 @@ public class CanvasManagerScript : MonoBehaviour
         eventSystem.SetSelectedGameObject(mainHomeButton, new BaseEventData(eventSystem));
     }
 
-    public bool GetInsInJournal()
+    public bool GetIsInJournal()
     {
         return isInJournal;
+    }
+
+    public GameObject GetWaitForInput()
+    {
+        return waitingForInputPanel;
     }
 }

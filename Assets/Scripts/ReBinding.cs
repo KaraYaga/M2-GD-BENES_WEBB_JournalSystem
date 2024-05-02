@@ -20,6 +20,8 @@ public class ReBinding : MonoBehaviour
 
     public void StartRebind() 
     {
+        CanvasManagerScript.instance.GetWaitForInput().SetActive(true);
+
         inputAction.Disable();
         rebindOperation = inputAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Keyboard>/escape")
@@ -29,6 +31,9 @@ public class ReBinding : MonoBehaviour
             .WithControlsExcluding("<Gamepad>/leftStick/up")
             .WithControlsExcluding("<Gamepad>/leftStick/right")
             .WithControlsExcluding("<Gamepad>/leftStick/left")
+            .WithControlsExcluding("<Gamepad>/buttonSouth")
+            .WithControlsExcluding("<Gamepad>/start")
+            .WithControlsExcluding("<Gamepad>/select")
             .OnMatchWaitForAnother(0.1f)
             .OnComplete(operation => RebindComplete());
 
@@ -38,8 +43,9 @@ public class ReBinding : MonoBehaviour
 
     public void RebindComplete()
     {
-        UpdateBindingUI();
+        CanvasManagerScript.instance.GetWaitForInput().SetActive(false);
         rebindOperation.Dispose();
+        UpdateBindingUI();
     }
 
     public void UpdateBindingUI()
@@ -50,48 +56,38 @@ public class ReBinding : MonoBehaviour
 
         if (playerInput.currentControlScheme == "Keyboard")
         {
-            if (InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Left Button" ||
-                    InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Press")
+            string controlPath = InputControlPath.ToHumanReadableString(
+                actionRef.action.bindings[bindingIndex].effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice);
+
+            if (controlPath == "Left Button" || controlPath == "Press")
             {
                 bindingText.text = "";
-                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("leftButton");
+                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
 
                 spriteIcon.SetActive(true);
 
             }
-            else if (InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice) == "Right Button")
+            else if (controlPath == "Right Button")
             {
                 bindingText.text = "";
-                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite("rightButton");
+                spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
                 spriteIcon.SetActive(true);
             }
             else
             {
                 spriteIcon.SetActive(false);
-                bindingText.text = InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+                bindingText.text = controlPath;
             }
         }
         else if(playerInput.currentControlScheme == "Gamepad")
         {
-            bindingText.text = "";
-
             string controlPath = InputControlPath.ToHumanReadableString(
-                    actionRef.action.bindings[bindingIndex].effectivePath,
-                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+                actionRef.action.bindings[bindingIndex].effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice);
 
-            Debug.Log(controlPath);
-
+            bindingText.text = "";
             spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
-
-
             spriteIcon.SetActive(true);
         }
 
