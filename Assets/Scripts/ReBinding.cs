@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,7 +12,6 @@ public class ReBinding : MonoBehaviour
     void Start()
     {
         inputAction = actionRef;
-
         UpdateBindingUI();
     }
 
@@ -33,12 +30,12 @@ public class ReBinding : MonoBehaviour
     public void RebindComplete()
     {
         UpdateBindingUI();
-
         rebindOperation.Dispose();
     }
 
     void UpdateBindingUI()
     {
+        //if keyboard --> do that else if gamepad --> do that
         int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
 
         bindingText.text = InputControlPath.ToHumanReadableString(
