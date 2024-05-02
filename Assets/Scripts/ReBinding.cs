@@ -15,11 +15,6 @@ public class ReBinding : MonoBehaviour
         UpdateBindingUI();
     }
 
-    private void Update()
-    {
-        Debug.Log(GetComponent<PlayerInput>().currentControlScheme);
-    }
-
     public void StartRebind() 
     {
         inputAction.Disable();
@@ -40,11 +35,17 @@ public class ReBinding : MonoBehaviour
 
     void UpdateBindingUI()
     {
-        //if keyboard --> do that else if gamepad --> do that
-        int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+        PlayerInput playerInput = JournalNavigation.instance.GetPlayerInput();
 
-        bindingText.text = InputControlPath.ToHumanReadableString(
-            actionRef.action.bindings[bindingIndex].effectivePath,
-            InputControlPath.HumanReadableStringOptions.OmitDevice);
+        if (playerInput.currentControlScheme == "Keyboard")
+        {
+            //if keyboard --> do that else if gamepad --> do that
+            int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+
+            bindingText.text = InputControlPath.ToHumanReadableString(
+                actionRef.action.bindings[bindingIndex].effectivePath,
+                InputControlPath.HumanReadableStringOptions.OmitDevice);
+        }
+
     }
 }

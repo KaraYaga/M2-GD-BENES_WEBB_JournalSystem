@@ -5,13 +5,21 @@ using UnityEngine.InputSystem;
 
 public class JournalNavigation : MonoBehaviour
 {
+    public static JournalNavigation instance;
     [SerializeField] private List<GameObject> pages = new List<GameObject>();
-    private int pagesPos = 0;
     CanvasManagerScript canvaManager;
+    PlayerInput playerInput;
+    private int pagesPos = 0;
+
+    private void Awake()
+    {
+        instance = this;    
+    }
 
     private void Start()
     {
         canvaManager = CanvasManagerScript.instance;
+        playerInput = gameObject.GetComponent<PlayerInput>();
     }
 
     public void RightPage(InputAction.CallbackContext context)
@@ -21,7 +29,6 @@ public class JournalNavigation : MonoBehaviour
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos++;
             pages[pagesPos].gameObject.SetActive(true);
-            Debug.Log(pagesPos);
         }
     }
 
@@ -32,7 +39,11 @@ public class JournalNavigation : MonoBehaviour
             pages[pagesPos].gameObject.SetActive(false);
             pagesPos--;
             pages[pagesPos].gameObject.SetActive(true);
-            Debug.Log(pagesPos);
         }
+    }
+
+    public PlayerInput GetPlayerInput()
+    {
+        return playerInput;
     }
 }
