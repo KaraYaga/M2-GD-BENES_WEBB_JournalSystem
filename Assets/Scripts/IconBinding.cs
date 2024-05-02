@@ -41,10 +41,10 @@ public class IconBinding : MonoBehaviour
             // map from that to the sprites we have for gamepads.
             switch (controlPath)
             {
-                case "buttonSouth": return buttonSouth;
-                case "buttonNorth": return buttonNorth;
-                case "buttonEast": return buttonEast;
-                case "buttonWest": return buttonWest;
+                case "Button South": return buttonSouth;
+                case "Button North": return buttonNorth;
+                case "Button East": return buttonEast;
+                case "Button West": return buttonWest;
                 case "start": return startButton;
                 case "select": return selectButton;
                 case "leftTrigger": return leftTrigger;

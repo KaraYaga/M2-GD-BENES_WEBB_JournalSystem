@@ -1965,25 +1965,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allIcons:
-    buttonSouth: {fileID: 0}
-    buttonNorth: {fileID: 0}
-    buttonEast: {fileID: 0}
-    buttonWest: {fileID: 0}
-    startButton: {fileID: 0}
+    buttonSouth: {fileID: 21300000, guid: 5cc92b7dd94a1d74a850f7b2b8c71db9, type: 3}
+    buttonNorth: {fileID: 21300000, guid: 6bede53003f40c54abb2a5ee3c0c9c6d, type: 3}
+    buttonEast: {fileID: 21300000, guid: ee1816985c8a6e749927fc1a01d91566, type: 3}
+    buttonWest: {fileID: 21300000, guid: 4e3e4c3d61e0d8744acfbce16cac3329, type: 3}
+    startButton: {fileID: 21300000, guid: b3f999c2b96d5194a9fed535c69875c1, type: 3}
     selectButton: {fileID: 0}
-    leftTrigger: {fileID: 0}
-    rightTrigger: {fileID: 0}
-    leftShoulder: {fileID: 0}
-    rightShoulder: {fileID: 0}
-    dpad: {fileID: 0}
-    dpadUp: {fileID: 0}
-    dpadDown: {fileID: 0}
-    dpadLeft: {fileID: 0}
-    dpadRight: {fileID: 0}
-    leftStick: {fileID: 0}
-    rightStick: {fileID: 0}
-    leftStickPress: {fileID: 0}
-    rightStickPress: {fileID: 0}
+    leftTrigger: {fileID: 21300000, guid: a64bf0cae607411419632658a1321af1, type: 3}
+    rightTrigger: {fileID: 21300000, guid: 32dee8f846a3cec4c8aa9510c4bade5e, type: 3}
+    leftShoulder: {fileID: 21300000, guid: aaed0cab57961554dbeb796aa1ea3dd8, type: 3}
+    rightShoulder: {fileID: 21300000, guid: 0e9cfde9cb76ac64caba8b47645f0941, type: 3}
+    dpad: {fileID: 21300000, guid: cd4a07e4d6853b74aae440e24614e798, type: 3}
+    dpadUp: {fileID: 21300000, guid: 1c54c57c4c3d48e45a9d5cb147cc723d, type: 3}
+    dpadDown: {fileID: 21300000, guid: 4e9088de7ea3f0142bc92eb99570c5ac, type: 3}
+    dpadLeft: {fileID: 21300000, guid: 0c8f47025db09684ba700f9518a8afd1, type: 3}
+    dpadRight: {fileID: 21300000, guid: db5690135f2fc3349a3bc16354805cfd, type: 3}
+    leftStick: {fileID: 21300000, guid: e03672981641ef5469e5febc9a5cb4ad, type: 3}
+    rightStick: {fileID: 21300000, guid: 3e984bebb25420647bed60d5dcedf0b3, type: 3}
+    leftStickPress: {fileID: 21300000, guid: 37e81f6a3e20ea245a3dcc45e10c10c6, type: 3}
+    rightStickPress: {fileID: 21300000, guid: 001894974d877ce46b0e442c5057179a, type: 3}
     mouseRightClick: {fileID: 21300000, guid: b19ea775868432d469472166c8f22748, type: 3}
     mouseLeftClick: {fileID: 21300000, guid: 0eea248bbcff48c47981851e67f895ea, type: 3}
 --- !u!4 &383945605

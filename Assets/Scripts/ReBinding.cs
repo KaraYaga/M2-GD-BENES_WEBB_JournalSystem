@@ -45,9 +45,11 @@ public class ReBinding : MonoBehaviour
     {
         PlayerInput playerInput = JournalNavigation.instance.GetPlayerInput();
 
+        int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+
         if (playerInput.currentControlScheme == "Keyboard")
         {
-            int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+            
 
             Debug.Log(InputControlPath.ToHumanReadableString(
                     actionRef.action.bindings[bindingIndex].effectivePath,
@@ -86,7 +88,14 @@ public class ReBinding : MonoBehaviour
         {
             Debug.Log("Gamepad");
             bindingText.text = "";
-            spriteIcon.SetActive(false);
+
+            string controlPath = InputControlPath.ToHumanReadableString(
+                    actionRef.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+
+            spriteIcon.GetComponent<Image>().sprite = IconBinding.instance.allIcons.GetSprite(controlPath);
+            Debug.Log(controlPath);
+            spriteIcon.SetActive(true);
         }
 
     }
