@@ -7,9 +7,12 @@ public class OptionsScript : MonoBehaviour
 {
     //AUDIO SLIDER
     [SerializeField] AudioClip[] soundtrack;
+
     [SerializeField] Slider volumeSlider;
+    [SerializeField] Slider brightness;
 
     [SerializeField] AudioSource audioSource;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,28 +40,32 @@ public class OptionsScript : MonoBehaviour
         }
     }
 
-    // Register Slider Events
+    // SLIDER EVENT
     private void OnEnable()
     {
         volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
+        brightness.onValueChanged.AddListener(sliderCallBack);
     }
 
-    // Called with Slider Change
+    // Slider Change of VOLUME
     private void changeVolume(float sliderValue)
     {
         audioSource.volume = sliderValue;
+    }
+
+    //BRIGHTNESS SLIDER
+    void sliderCallBack(float value)
+    {
+        Debug.Log("Slider Value Changed: " + value);
+        Screen.brightness = brightness.value;
     }
 
     // Undo Slider Events
     private void OnDisable()
     {
         volumeSlider.onValueChanged.RemoveAllListeners();
+        brightness.onValueChanged.RemoveAllListeners();
     }
-
-
-
-    //BRIGHTNESS SLIDER
-
 
     //GRAPHICS QUALITY
     public void setQuality(int qualityIndex)
