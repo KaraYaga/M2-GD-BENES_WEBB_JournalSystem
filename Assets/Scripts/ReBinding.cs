@@ -20,6 +20,11 @@ public class ReBinding : MonoBehaviour
         inputAction.Disable();
         rebindOperation = inputAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Keyboard>/escape")
+            .WithControlsExcluding("<Mouse>/leftButton")
+            .WithControlsExcluding("<Gamepad>/leftStick/down")
+            .WithControlsExcluding("<Gamepad>/leftStick/up")
+            .WithControlsExcluding("<Gamepad>/leftStick/right")
+            .WithControlsExcluding("<Gamepad>/leftStick/left")
             .OnMatchWaitForAnother(0.1f)
             .OnComplete(operation => RebindComplete());
 
@@ -45,6 +50,11 @@ public class ReBinding : MonoBehaviour
             bindingText.text = InputControlPath.ToHumanReadableString(
                 actionRef.action.bindings[bindingIndex].effectivePath,
                 InputControlPath.HumanReadableStringOptions.OmitDevice);
+        }
+        else if(playerInput.currentControlScheme == "Gamepad")
+        {
+            Debug.Log("Gamepad");
+            bindingText.text = "";
         }
 
     }
