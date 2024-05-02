@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class CanvasManagerScript : MonoBehaviour
@@ -8,6 +9,7 @@ public class CanvasManagerScript : MonoBehaviour
     public static CanvasManagerScript instance;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Input;
+    [SerializeField] private GameObject mainButton;
     private bool isInJournal;
 
 
@@ -42,6 +44,9 @@ public class CanvasManagerScript : MonoBehaviour
     {
         isInJournal = true;
         Options.SetActive(false);
+
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(mainButton, new BaseEventData(eventSystem));
     }
 
     // INPUT MENU OPEN AND CLOSE
@@ -55,6 +60,9 @@ public class CanvasManagerScript : MonoBehaviour
     {
         isInJournal = true;
         Input.SetActive(false);
+
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(mainButton, new BaseEventData(eventSystem));
     }
 
     public bool GetInsInJournal()
