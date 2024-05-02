@@ -15,6 +15,11 @@ public class ReBinding : MonoBehaviour
         UpdateBindingUI();
     }
 
+    private void Update()
+    {
+        Debug.Log(GetComponent<PlayerInput>().currentControlScheme);
+    }
+
     public void StartRebind() 
     {
         inputAction.Disable();
