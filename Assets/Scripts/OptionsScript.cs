@@ -12,6 +12,7 @@ public class OptionsScript : MonoBehaviour
     [SerializeField] Slider brightness;
 
     [SerializeField] AudioSource audioSource;
+    [SerializeField] Image brightnesspanel;
 
     // Start is called before the first frame update
     void Awake()
@@ -57,7 +58,7 @@ public class OptionsScript : MonoBehaviour
     void sliderCallBack(float value)
     {
         Debug.Log("Slider Value Changed: " + value);
-        Screen.brightness = brightness.value;
+        brightnesspanel.color = new Color(0,0,0,1.0f-value);
     }
 
     // Undo Slider Events
