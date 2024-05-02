@@ -36,6 +36,7 @@ public class CanvasManagerScript : MonoBehaviour
     {
         isInJournal = false;
         Options.SetActive(true);
+        Input.SetActive(false);
     }
     public void closeOptions() 
     {
@@ -48,6 +49,7 @@ public class CanvasManagerScript : MonoBehaviour
     {
         isInJournal = false;
         Input.SetActive(true);
+        Options.SetActive(false);
     }
     public void closeInput()
     {
