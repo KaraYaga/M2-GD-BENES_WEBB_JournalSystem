@@ -54,7 +54,9 @@ using UnityEngine;
                     case "rightStick": return rightStick;
                     case "leftStickPress": return leftStickPress;
                     case "rightStickPress": return rightStickPress;
-                }
+                    case "<Mouse>/leftButton": return leftStickPress;
+                    case "<Mouse>/rightButton": return rightStickPress;
+            }
                 return null;
             }
         }
