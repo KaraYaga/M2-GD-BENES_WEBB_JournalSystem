@@ -38,13 +38,12 @@ public class ReBinding : MonoBehaviour
         rebindOperation.Dispose();
     }
 
-    void UpdateBindingUI()
+    public void UpdateBindingUI()
     {
         PlayerInput playerInput = JournalNavigation.instance.GetPlayerInput();
 
         if (playerInput.currentControlScheme == "Keyboard")
         {
-            //if keyboard --> do that else if gamepad --> do that
             int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
 
             bindingText.text = InputControlPath.ToHumanReadableString(
