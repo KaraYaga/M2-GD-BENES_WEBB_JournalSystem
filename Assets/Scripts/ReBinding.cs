@@ -11,6 +11,7 @@ public class ReBinding : MonoBehaviour
     [SerializeField] private GameObject spriteIcon;
     private InputAction inputAction;
     private InputActionRebindingExtensions.RebindingOperation rebindOperation;
+    private PlayerInput playerInput;
 
     void Start()
     {
@@ -22,23 +23,42 @@ public class ReBinding : MonoBehaviour
     {
         CanvasManagerScript.instance.GetWaitForInput().SetActive(true);
 
-        inputAction.Disable();
-        rebindOperation = inputAction.PerformInteractiveRebinding()
-            .WithControlsExcluding("<Keyboard>/escape")
-            .WithControlsExcluding("<Mouse>/leftButton")
-            .WithControlsExcluding("<Mouse>/press")
-            .WithControlsExcluding("<Gamepad>/leftStick/down")
-            .WithControlsExcluding("<Gamepad>/leftStick/up")
-            .WithControlsExcluding("<Gamepad>/leftStick/right")
-            .WithControlsExcluding("<Gamepad>/leftStick/left")
-            .WithControlsExcluding("<Gamepad>/buttonSouth")
-            .WithControlsExcluding("<Gamepad>/start")
-            .WithControlsExcluding("<Gamepad>/select")
-            .OnMatchWaitForAnother(0.1f)
-            .OnComplete(operation => RebindComplete());
+        playerInput = JournalNavigation.instance.GetPlayerInput();
 
-        rebindOperation.Start();
-        inputAction.Enable();
+        if(playerInput.currentControlScheme == "Keyboard")
+        {
+            inputAction.Disable();
+            rebindOperation = inputAction.PerformInteractiveRebinding()
+                .WithBindingGroup("Keyboard")
+                .WithControlsExcluding("<Keyboard>/escape")
+                .WithControlsExcluding("<Mouse>/leftButton")
+                .WithControlsExcluding("<Mouse>/press")
+                .WithControlsExcluding("<Gamepad>/anyKey")
+                .OnMatchWaitForAnother(0.1f)
+                .OnComplete(operation => RebindComplete());
+
+            rebindOperation.Start();
+            inputAction.Enable();
+        }
+        else if(playerInput.currentControlScheme == "Gamepad")
+        {
+            inputAction.Disable();
+            rebindOperation = inputAction.PerformInteractiveRebinding()
+                .WithBindingGroup("Gamepad")
+                .WithControlsExcluding("<Gamepad>/leftStick/down")
+                .WithControlsExcluding("<Gamepad>/leftStick/up")
+                .WithControlsExcluding("<Gamepad>/leftStick/right")
+                .WithControlsExcluding("<Gamepad>/leftStick/left")
+                .WithControlsExcluding("<Gamepad>/buttonSouth")
+                .WithControlsExcluding("<Gamepad>/start")
+                .WithControlsExcluding("<Gamepad>/select")
+                .WithControlsExcluding("<Keyboard>/anyKey")
+                .OnMatchWaitForAnother(0.1f)
+                .OnComplete(operation => RebindComplete());
+
+            rebindOperation.Start();
+            inputAction.Enable();
+        }
     }
 
     public void RebindComplete()
@@ -51,9 +71,14 @@ public class ReBinding : MonoBehaviour
     public void UpdateBindingUI()
     {
         //*********************************************************NEED TO FIX : ui don't update gamepad if changed before (only update the one before that) 
-        PlayerInput playerInput = JournalNavigation.instance.GetPlayerInput();
+        playerInput = JournalNavigation.instance.GetPlayerInput();
 
         int bindingIndex = actionRef.action.GetBindingIndexForControl(actionRef.action.controls[0]);
+        Debug.Log(bindingIndex);
+
+        //Debug.Log(InputControlPath.ToHumanReadableString(
+        //  actionRef.action.bindings[bindingIndex].effectivePath,
+        //  InputControlPath.HumanReadableStringOptions.OmitDevice));
 
         string controlPath = InputControlPath.ToHumanReadableString(
           actionRef.action.bindings[bindingIndex].effectivePath,
@@ -61,6 +86,13 @@ public class ReBinding : MonoBehaviour
 
         if (playerInput.currentControlScheme == "Keyboard")
         {
+            //foreach (var binding in actionRef.action.bindings)
+            //{
+
+                //Debug.Log(InputControlPath.ToHumanReadableString(
+                //    binding.effectivePath, InputControlPath.HumanReadableStringOptions.OmitDevice));
+            //}
+
             if (controlPath == "Left Button" || controlPath == "Press")
             {
                 bindingText.text = "";
