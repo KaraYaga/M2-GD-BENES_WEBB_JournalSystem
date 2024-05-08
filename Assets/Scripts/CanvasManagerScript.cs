@@ -7,13 +7,18 @@ using UnityEngine.SceneManagement;
 public class CanvasManagerScript : MonoBehaviour
 {
     public static CanvasManagerScript instance;
+
+    [Header("Panels")]
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Input;
 
+    [SerializeField] private GameObject waitingForInputPanel;
+
+    [Header("Button")]
     [SerializeField] private GameObject mainHomeButton;
     [SerializeField] private GameObject mainInputButton;
+    [SerializeField] private GameObject mainOptionButton;
 
-    [SerializeField] private GameObject waitingForInputPanel;
     private bool isInJournal;
 
 
@@ -44,6 +49,9 @@ public class CanvasManagerScript : MonoBehaviour
         isInJournal = false;
         Options.SetActive(true);
         Input.SetActive(false);
+
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(mainOptionButton, new BaseEventData(eventSystem));
     }
     public void closeOptions() 
     {

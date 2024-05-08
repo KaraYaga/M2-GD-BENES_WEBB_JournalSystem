@@ -14,7 +14,6 @@ public class OptionsScript : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] Image brightnesspanel;
 
-    // Start is called before the first frame update
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
@@ -23,12 +22,12 @@ public class OptionsScript : MonoBehaviour
     // Initialize
     void Start()
     {
-        //audioSource = GetComponent<AudioSource>();
-
         if (!audioSource.playOnAwake)
         {
             audioSource.Play();
         }
+
+        changeVolume(volumeSlider.value);
     }
 
     // Update every frame
